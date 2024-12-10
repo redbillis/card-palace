@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./styles.css" />
+
+    <title>Card Shuffler</title>
+  </head>
+  <body>
+    <section>
+      <h1>🃏Card Shuffler🃏</h1>
+
+      <div>
+        <h4>Choose what to suffle:</h4>
+        <div class="btnChoices">
+          <button id="spades">Spades ♠️</button>
+          <button id="hearts">Hearts ♥️</button>
+          <button id="diamonds">Diamonds ♦️</button>
+          <button id="clubs">Clubs ♣️</button>
+        </div>
+      </div>
+
+      <div id="choiceSection">
+        <h4>Your choice:</h4>
+        <span id="choiceText"></span>
+      </div>
+
+      <button id="shuffle">Shuffle 🔀</button>
+      <button id="clear">Clear ❌</button>
+
+      <div>
+        <h4>Shuffled Cards:</h4>
+        <span id="cardText"></span>
+      </div>
+    </section>
+
+    <script src="script.js" type="module"></script>
+  </body>
+</html>
