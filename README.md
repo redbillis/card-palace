@@ -6,7 +6,7 @@ The Fisher–Yates shuffle is an algorithm for shuffling a finite sequence. The 
 
 The Fisher–Yates shuffle is named after Ronald Fisher and Frank Yates, who first described it. It is also known as the Knuth shuffle after Donald Knuth.[2] A variant of the Fisher–Yates shuffle, known as Sattolo's algorithm, may be used to generate random cyclic permutations of length n instead of random permutations.
 
-## shuffle function used for this app.
+## Function in use.
 
 ```javascript
 function shuffle(cards) {
