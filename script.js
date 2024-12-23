@@ -62,8 +62,10 @@ const clubs = [
 // Variable initiation.
 let deck = [];
 let choices = [];
+let flipped = false;
+
 const choiceText = document.getElementById("choiceText");
-const cardText = document.querySelector("#cardText");
+const shuffledCards = document.querySelector("#shuffledCards");
 
 function shuffle(cards) {
   // This function shuffles an array of cards using the Fischer-Yates shuffle Algorithm.
@@ -112,19 +114,44 @@ document.getElementById("clubs").addEventListener("click", () => {
 document.getElementById("clear").addEventListener("click", () => {
   choices = [];
   choiceText.innerHTML = "";
-  cardText.innerHTML = "";
+  shuffledCards.innerHTML = "";
 });
 
 // Event Listener for calling the "shuffle" function for shuffling the cards.
 document.getElementById("shuffle").addEventListener("click", () => {
   deck = shuffle(choices);
   deck.forEach((card) => {
-    cardText.innerHTML += 
-    `
-      <div class="card">
-        <h2>${card}</h2>
+    shuffledCards.innerHTML += `
+      <div class="card" data-card="${card}">
+        <span>${card}</span>
       </div>
     `;
   });
-  // cardText.innerHTML = deck.join("_ ");
 });
+
+// Flip all cards when clicked.
+document.getElementById("flipCards").addEventListener("click", () => {
+  flipped = !flipped; // Toggle flipped state
+  shuffledCards.innerHTML = "";
+  deck.forEach((card) => {
+    shuffledCards.innerHTML += `
+      <div class="card" data-card="${card}" data-flipped="${flipped}">
+        <span>${flipped ? "🂠" : card}</span>
+      </div>
+    `;
+  });
+  addCardClickListeners();
+});
+
+// Add click event listeners for flipping to each card.
+function addCardClickListeners() {
+  document.querySelectorAll(".card").forEach((cardElement) => {
+    cardElement.addEventListener("click", () => {
+      const isFlipped = cardElement.getAttribute("data-flipped") === "true";
+      cardElement.setAttribute("data-flipped", !isFlipped);
+      cardElement.innerHTML = `
+        <span>${isFlipped ? cardElement.getAttribute("data-card") : "🂠"}</span>
+      `;
+    });
+  });
+}
