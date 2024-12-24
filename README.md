@@ -2,9 +2,7 @@
 
 This app is built with one goal in mind: shuffling playing cards. It uses the Fischer-Yates shuffle algorithm to provide a random shuffle, perfect for games or the memory palace technique.
 
-It is aimed for those who want to practice their
-[Memory-Palace] ("https://en.wikipedia.org/wiki/Memory_palace")
-or any other technique of memorization.
+It is aimed for those who want to practice their memory palace or any other technique of memorization.
 
 ## Fischer-Yates shuffle Algorithm.
 
@@ -38,3 +36,4 @@ function shuffle(cards) {
 ## References
 
 - [Fisher-Yates Shuffle](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle)
+- [Memory-Palace](https://en.wikipedia.org/wiki/Memory_palace)
