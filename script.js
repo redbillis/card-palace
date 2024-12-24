@@ -136,7 +136,7 @@ document.getElementById("flipCards").addEventListener("click", () => {
   deck.forEach((card) => {
     shuffledCards.innerHTML += `
       <div class="card" data-card="${card}" data-flipped="${flipped}">
-        <span>${flipped ? "🂠" : card}</span>
+        <span>${flipped ? "❓" : card}</span>
       </div>
     `;
   });
@@ -150,7 +150,7 @@ function addCardClickListeners() {
       const isFlipped = cardElement.getAttribute("data-flipped") === "true";
       cardElement.setAttribute("data-flipped", !isFlipped);
       cardElement.innerHTML = `
-        <span>${isFlipped ? cardElement.getAttribute("data-card") : "🂠"}</span>
+        <span>${isFlipped ? cardElement.getAttribute("data-card") : "❓"}</span>
       `;
     });
   });
